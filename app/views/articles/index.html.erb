@@ -1,21 +1,32 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Миний анхны ruby on rails v6.0.2</h1>
+        <p>Нийтлэл бичихдээ бэлэн үү?</p>
+        <br>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+            <tr>
+                <th>Гарчиг</th>
+                <th>Тайлбар</th>
+                <th></th>
+            </tr>
 
-<h1>Listing Articles</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
-
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+            <% @articles.each do |article| %>
+                <tr>
+                <td><%= article.title %></td>
+                <td><%= article.text %></td>
+                <td><%= link_to 'Үзэх', article_path(article) %></td>
+                <td><%= link_to 'Засах', edit_article_path(article) %></td>
+                <td><%= link_to 'Устгах', article_path(article),
+                        method: :delete,
+                        data: { confirm: 'Та итгэлтэй байна уу?' } %></td>
+                </tr>
+            <% end %>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,11 +1,30 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
 
-<%= link_to 'Back', articles_path %>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="cols">
+                <h3>
+                    <%= @article.title %>
+                </h3>
+                    
+                <p>
+                    <%= @article.text %>
+                </p>
+                <%= link_to 'Засах', edit_article_path(@article) %> |
+                <%= link_to 'Буцах', articles_path %>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="cols">
+                <div>Сэтгэгдэлүүд</div>
+                <%= render @article.comments %>
+                <hr/>
+                <h5>Сэтгэгдэл нэмэх:</h5>
+                <%= render 'comments/form' %>
+                
+                
+                </div>
+        </div>
+    </div>
+</>
